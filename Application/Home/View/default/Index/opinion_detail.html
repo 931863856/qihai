@@ -1,0 +1,97 @@
+<extend name="Layout/default" />
+<block name="title">{:L('OPINION_TITLE')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+        *{
+            letter-spacing: 2px;
+        }
+        .foot{
+            background: #000;
+            color:#999;
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="main_value_detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="javascript:window.history.back();" class="back_btn">{:L('BACK')}</a>
+                </div>
+            </div>
+            <div class="row head">
+                <div class="col-md-3 left">{:L('OPINION_TITLE')}</div>
+                <div class="col-md-9 right">
+                    <img src="__IMG__/qihai84.png">
+                </div>
+            </div>
+            <div class="row tab">
+                <div class="col-md-3 left">
+                    <ul>
+                        <li>
+                            {:L('VALUE_PROPOSITION')}
+                            <span class="triangle"></span>
+                        </li>
+                        <li>
+                            {:L('INVESTMENT_THESIS')}
+                            <span class="triangle"></span>
+                        </li>
+                        <li>
+                            {:L('POSITIONING')}
+                            <span class="triangle"></span>
+                        </li>
+                        <li>
+                            {:L('STRATEGY')}
+                            <span class="triangle"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9 right">
+                    <div class="cnt">
+                        {$opinion_0['description']}
+                    </div>
+                    <div class="cnt">
+                        {$opinion_1['description']}
+                    </div>
+                    <div class="cnt">
+                        {$opinion_2['description']}
+                    </div>
+                    <div class="cnt">
+                        {$opinion_3['description']}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('.main_value_detail .container .right .back_btn').hover(function(){
+            $(this).children('.layer_black').stop().show();
+        },function(){
+            $(this).children('.layer_black').stop().hide();
+        })
+        $('.main_value_detail .container .tab .left ul li').click(function(){
+            var _this = $(this);
+            $('.triangle').hide();
+            _this.find('.triangle').show();
+            var idx = _this.index();
+            $('.main_value_detail .container .tab .cnt').hide();
+            $('.main_value_detail .container .tab .cnt').eq(idx).show();
+
+        })
+        $('.triangle').eq({$idx}).show();
+        $('.main_value_detail .container .tab .cnt').eq({$idx}).show();
+    </script>
+</block>

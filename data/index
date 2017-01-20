@@ -1,0 +1,13 @@
+{
+    "title": "七海资本",
+    "sub_title": "专注投资和链接中美科技创新",
+    "sliders": [
+        {"title": "价值主张", "sub_title": "把美国公司带入中国将中国公司和模式带入美国协助建立互联网生态圈", "url": "index.php/Home/Index/home"},
+        {"title": "关于我们", "sub_title": "七海资本由腾讯前CTO熊明华于2014年9月创立。“七海”指从前阿拉伯人的典籍中记载的从西方通往中国所需要经过的七片水域，在英语中也有“五湖四海”之意。七海资本即致力通过对中美两国创业企业的投资，搭建连接大洋两岸创业者与市场之间的桥梁。", "url": "index.php/Home/Index/about"},
+        {"title": "团队", "sub_title": "七海资本拥有精练和富有经验、能够处理跨文化关系的投资团队。团队成员具有包括知名投资公司和科技企业管理层等多元化的背景，并在中国（上海，深圳，北京）和美国（硅谷，纽约，波士顿）的创新中心都有完善和深入的触角。七海在投资界拥有良好的口碑和经验，以及强大的商务拓展能力。", "url": "index.php/Home/Index/team"},
+        {"title": "投资组合", "sub_title": "在中国（上海、深圳、北京）和美国（硅谷、纽约、波士顿）的创新中心都有完善和深入的触角。七海在投资界拥有良好的口碑和经验，以及强大的商务拓展能力。", "url": "index.php/Home/Index/portfolio"},
+        {"title": "峰会", "sub_title": "2014 IDEAS 互联网与物联网产业跨界峰会", "url": "index.php/Home/Index/meeting"},
+        {"title": "动态", "sub_title": "七海资本动态", "url": "index.php/Home/Index/news"},
+        {"title": "联系我们", "sub_title": "若有融资需求或其它疑问，请发送邮件至 bp@7seasvc.com", "url": "index.php/Home/Index/portfolio"}
+    ]
+}

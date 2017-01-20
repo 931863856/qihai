@@ -1,0 +1,166 @@
+<extend name="Layout/default" />
+<block name="title">{:L('PORTFOLIO')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+    *{
+        letter-spacing: 2px;
+    }
+    .foot{
+        background: #266DA8;
+        color:#999;
+    }
+    </style>
+</block>
+<block name="content">
+    <div class="main_invest">
+        <div class="head_top">
+            <span class="arr_l icon-angle-left icon-4x"></span>
+            <span class="tit">{:L('PORTFOLIO')}</span>
+            <span class="arr_r  icon-angle-right icon-4x"></span>
+            <a href="index.html?index_slider=4" class="back_btn">
+                {:L('BACK')}
+                <div class="bg_hover"></div>
+            </a>
+        </div>
+        <div class="content_silde">
+            <ul class="ul_go">
+                <foreach name="data" item="vo">
+                <li id="{$vo.product_id}">
+                    <div class="imgwrap"><img src="{$vo.image}"></div>
+                    <div class="title">{$vo.name}</div>
+                    <p class="tip">{$vo.model}</p>
+                    <div class="hover_bg"></div>
+                </li>
+                </foreach>
+                <!--<li>
+                    <div class="imgwrap"><img src="__IMG__/1.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/2.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期； 位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/3.png"></div>
+                    <div class="title">任务兔</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/4.png"></div>
+                    <div class="title">筋斗云</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/1.png"></div>
+                    <div class="title">Totspot</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/2.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/2.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/2.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>
+                <li>
+                    <div class="imgwrap"><img src="__IMG__/2.png"></div>
+                    <div class="title">Lily</div>
+                    <p class="tip">智能设备/无人机；早期；位于旧金山</p>
+                    <div class="hover_bg"></div>
+                </li>-->
+            </ul>
+            <div class="mask_right"></div>
+            <div class="mask_left"></div>
+        </div>
+        <foreach name="data" item="vo">
+        <div class="show_detail" id="detail_{$vo.product_id}">
+            <h3> ●&nbsp;{$vo.name}</h3>
+            {$vo.description}
+            <a class="more_btn" href="{$vo.upc}" target="_blank">{:L('GET_MORE')}</a>
+        </div>
+        </foreach>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+</block>
+
+<block name="js">
+
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var li_num = $('.main_invest .content_silde ul li').size();
+    var li_w = $('.main_invest .content_silde ul li').width();
+    var ul_w = li_num*(li_w+52)
+    $('.main_invest .content_silde ul').width(ul_w);
+
+    $('.main_invest .content_silde ul li').hover(function(){
+        $(this).children('.hover_bg').show();
+    },function(){
+        $(this).children('.hover_bg').stop().hide();
+    })
+// for slide START
+    var distance=0;
+    var outter_w = $('.main_invest .content_silde').width();
+    var max_distance = ul_w - outter_w + 270;
+    $('.main_invest .head_top .arr_r').click(function(){
+        distance += -270;
+        if(-distance<max_distance){
+            $('.ul_go').stop().css({
+                transform:'translateX(' + distance + 'px)'
+            })
+        }else{
+            $('.ul_go').stop().css({
+                transform:'translateX(270px)'
+            });
+            distance = 270;
+        }
+        
+    })
+    $('.main_invest .head_top .arr_l').click(function(){
+        distance += 270;
+        if(distance<=270){
+            $('.ul_go').stop().css({
+                transform:'translateX('+distance+'px)'
+            })
+        }else{
+            $('.ul_go').stop().css({
+                transform:'translateX(270px)'
+            })
+            distance=270;
+        }
+    })
+// for slide END
+
+
+    $('.main_invest .content_silde ul li').click(function(){
+        $('.show_detail').hide();
+        $('#detail_' + $(this).attr('id')).slideDown();
+    })
+})
+</script>
+
+</block>

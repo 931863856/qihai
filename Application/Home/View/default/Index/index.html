@@ -1,0 +1,174 @@
+<extend name="Layout/default" />
+<block name="title">{:L('HEAD_TITLE')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+    body{
+        overflow:hidden;
+    }
+    </style>
+</block>
+<block name="content">
+    <div class="container indexAll" style="background-image:url(__IMG__/qihai1.jpg)"> 
+    <!-- 左侧 -->
+        <div class="left">
+            <div class="mask"></div>
+            <div class="line_list">
+                <div class="point_at"></div>
+                <div class="dot"></div>
+                <div class="dot">
+                    <span></span>
+                </div>
+                <div class="dot">
+                    <span></span>
+                </div>
+                <div class="dot">
+                    <span></span>
+                </div>
+                <div class="dot">
+                    <span></span>
+                </div>
+                <div class="dot">
+                    <span></span>
+                </div>
+                <div class="dot">
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav">
+                <li class="op1"><a>1. &nbsp;{:L('HOME')}</a></li>
+                <li><a>2. &nbsp;{:L('ABOUT_US')}</a></li>
+                <li><a>3. &nbsp;{:L('TEAM')}</a></li>
+                <li><a>4. &nbsp;{:L('PORTFOLIO')}</a></li>
+                <li><a>5. &nbsp;{:L('SUMMIT')}</a></li>
+                <li><a>6. &nbsp;{:L('TREND')}</a></li>
+                <li><a>7. &nbsp;{:L('CONTACT')}</a></li>
+            </ul>
+        </div>
+    <!-- 右侧 -->
+        <div class="right">
+            <ul>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_VALUE_PROPOSITION')}
+                        <p class="ct">{$banner[0]['summary']}</p>
+                        <a class="more" href="{:U('opinion')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_ABOUT_US')}
+                        <p class="ct">{$banner[1]['summary']}</p>
+                        <a class="more" href="{:U('about')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_TEAM')}
+                        <p class="ct">{$banner[2]['summary']}</p>
+                        <a class="more" href="{:U('team')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_PORTFILIO')}
+                        <p class="ct">{$banner[3]['summary']}</p>
+                        <a class="more" href="{:U('portfolio')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_SUMMIT')}
+                        <p class="ct">{$banner[4]['summary']}</p>
+                        <a class="more" href="{:U('conference')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_TREND')}
+                        <p class="ct">{$banner[5]['summary']} </p>
+                        <a class="more" href="{:U('news')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="inner_box">
+                        <div class="tit">{:L('HEAD_TITLE')}</div>
+                        {:L('SPAN_CONTACT')}
+                        <p class="ct">{$banner[6]['summary']}</p>
+                        <a class="more" href="{:U('contact')}">
+                            {:L('GET_MORE')}
+                            <div class="effect"></div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <a class="switch_en" href="{$url_change_lang}">
+                {:L('CHANGE_LANG')}
+                <div class="bg_hover"></div>
+            </a>
+        </div>
+        <!-- 七logo层 -->
+        <div class="logo">
+            <img src="__IMG__/logoqihai.png">
+        </div>
+        <p class="index_title">{:L('SLOGAN')}</p>
+        <!-- 按钮层 -->
+        <div class="arrow_next">
+            <div class="spread_layer"></div>
+        </div>
+    </div>
+</block>
+<block name="footer">
+    <div class="footer">
+        BLOCK FOOTER 1
+    </div>
+</block>
+<block name="js">
+<script type="text/javascript" src="__JS__/main.js"></script>
+<script type="text/javascript">
+
+    // 设置全局图片资源路径
+    var img_path = "__IMG__";
+
+    //子页面回退时，定位到对应的导航
+    var _getUrl = window.location.href;
+    function locate_to(){
+        <if condition="isset($index_slider)"> 
+            click_nav({$index_slider});
+            wheel_index = {$index_slider};
+            $('.logo').css({
+                '-webkit-animation':'inherit',
+                '-moz-animation':'inherit',
+                'animation':'inherit'
+            })
+        </if>
+    };
+    $(function(){
+        locate_to();
+    });
+</script>
+</block>

@@ -1,0 +1,75 @@
+<extend name="Layout/default" />
+<block name="title">{$data.name} - {:L('TREND')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+        *{
+            letter-spacing: 2px;
+        }
+        html,body{
+            height: 100%;
+        }
+        .foot{
+            background: #000;
+            color:#999;
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="main_news_detail">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2 left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>{$data.name}</h3>
+                    </div>
+                    <div class="col-md-12 sort_and_time">
+                        <span class="sort">{:L('TREND')}&gt;&gt;</span>
+                        <span class="time">{$data.date_added|strtotime|date="Y-m-d",###}</span>
+                    </div>
+                </div>
+                <img src="{$data.image}">
+                <div class="content">
+                    {$data.description}
+                </div>        
+            </div>
+            <div class="col-md-4 right">
+                <div class="row">
+                    <a href="javascript:window.history.back();" class="back_btn">
+                        {:L('BACK')}
+                        <div class="bg_hover"></div>
+                    </a>
+                </div>
+                <h4>{:L('INDUSTRY_NEWS')}</h4>
+                <ul class="right_list">
+                    <foreach name="industry_news" item="vo">
+                    <li><a href="{:U('news_detail', array('id'=>$vo['article_id']))}">{$vo.name}</a></li>
+                    </foreach>
+                    <!--<li><a href="page_news_detail.html">十三五规划：新型地产将获较大增长空间</a></li>
+                    <li><a href="page_news_detail.html">环球网报道 实习记者李越英语是</a></li>
+                    <li><a href="page_news_detail.html">从一个潮流，两个对流，三个需求看文旅</a></li>
+                    <li><a href="page_news_detail.html">十三五规划：新型地产将获较大增长空间</a></li>
+                    <li><a href="page_news_detail.html">从一个潮流，两个对流，三个需求看文旅</a></li>
+                    <li><a href="page_news_detail.html">亦是欧盟机构的主要工作语言之一较大增长空间</a></li>-->
+                </ul>   
+                <img src="__IMG__/qihai84.png">
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+</block>
+
+<block name="js">
+
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var right_height = $('.main_news_detail').height();
+    $('.main_news_detail .right').height(right_height);
+</script>
+
+</block>

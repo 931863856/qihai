@@ -1,0 +1,368 @@
+<extend name="Layout/default" />
+<block name="title">{:L('SUMMIT')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/conference.css">
+</block>
+<block name="content">
+    <div class="home index">
+        <div class="container">
+            <div class="row row_back">
+                <a href="index.html?index_slider=5" class="btn btn-default back_btn">
+                    {:L('BACK')}
+                    <div class="bg_hover"></div>
+                </a>
+            </div>
+            <h2>{:L('SUMMIT')}</h2>
+            <p>2014 IDEAS Transboundary of Interner & IoT</p>
+            <div class="row row_detail">
+                <div class="btn bt-default detail" data-toggle="modal" data-target="#mask">CHECK DETAIL</div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p1">
+        <ul class="row nav">
+            <li class="col-md-2 col-md-offset-2 on">Future Internet</li>
+            <li class="col-md-2">Industry 4.0</li>
+            <li class="col-md-2">IoT and future life</li>
+            <li class="col-md-2">Enabling Ecosystem</li>
+        </ul>
+        <div class="title">Future Internet</div>
+        <div class="time">(9:00~10:30)</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[0]}</div>
+                    <img src="__IMG__/qihai92.png">
+                    <div class="ct_block_tit">Opening Remarks(Video)</div>
+                    <div class="ct_block_time">9:10~9:30</div>
+                </div>
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[1]}</div>
+                    <img src="__IMG__/qihai93.png">
+                    <div class="ct_block_tit">Keynote1: Internet of Things and Humans(Video)</div>
+                    <div class="ct_block_time">9:30~10:00</div>
+                </div>
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[2]}</div>
+                    <img src="__IMG__/qihai94.png">
+                    <div class="ct_block_tit">Keynote2: Internet of New Energy(Video)</div>
+                    <div class="ct_block_time">10:00~10:30</div>
+                </div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p2">
+        <div class="title">Industry 4.0</div>
+        <div class="time">(10:10~12:30)</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[3]}</div>
+                    <img src="__IMG__/qihai95.png">
+                    <div class="gy_block_time">10:55-10:15</div>
+                    <div class="gy_block_tit">Keynote 3: The Future of Possible(Video)</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[4]}</div>
+                    <img src="__IMG__/qihai96.png">
+                    <div class="gy_block_time">11:15-11:35</div>
+                    <div class="gy_block_tit">Revolutionizing Material Handling(Grabit)(Video)</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[5]}</div>
+                    <img src="__IMG__/qihai97.png">
+                    <div class="gy_block_time">11:35-11:50</div>
+                    <div class="gy_block_tit">Robots: The Genie of Industry 4.0(Video)</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[6]}</div>
+                    <img src="__IMG__/qihai98.png">
+                    <div class="gy_block_time">11:50-12:20</div>
+                    <div class="gy_block_tit">Panel 1: Industry 4.0 Moderated by Ivy Li(7 Seas Partner)(Video)</div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow_down"></div>
+        <ul class="dotList">
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse active_reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+        </ul>
+    </div>
+    <div class="home_child index p3">
+        <div class="title">IoT and future life</div>
+        <div class="time">（13:30~15:20）</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[7]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai99.png">
+                        <div class="txt_bg">Human Body: The next connected device (ProfUSA)(Video)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">Speakers</div>
+                    <div class="wlw_block_name" title="Ben Hwang Founder&CEO">Ben Hwang Founder&CEO</div>
+                    <div class="wlw_block_time">13:40-13:55</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[8]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai910.png">
+                        <div class="txt_bg">Seeing is unbelievable(AVEGANT)(Video)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">Speakers</div>
+                    <div class="wlw_block_name" title="Edward Tang">Edward Tang</div>
+                    <div class="wlw_block_time">13:55-14:10</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[9]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai911.png">
+                        <div class="txt_bg">Create the Future of Transportation, Today(LitMotors)(Video)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">Speakers</div>
+                    <div class="wlw_block_name" title="Danny Kim Founder & CEO">Danny Kim Founder & CEO</div>
+                    <div class="wlw_block_time">14:10-14:25</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[10]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai912.png">
+                        <div class="txt_bg">Smart Wristband(Elemoon)(Video)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">Speakers</div>
+                    <div class="wlw_block_name" title="Jing Zhou">Jing Zhou</div>
+                    <div class="wlw_block_time">14:25-14:50</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[11]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai912.png">
+                        <div class="txt_bg">Panel 2: IoT meets Internet Moderated by Jeff Xiong(Video)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">Speakers</div>
+                    <div class="wlw_block_name" title="Jack Xu(Sina President), Mel Yin(Tencent), Jeff Liu(Huawei), JP(Qingming), Shuhua Zhou(Kaiwu)">Jack Xu(Sina President), Mel Yin(Tencent), Jeff Liu(Huawei), JP(Qingming), Shuhua Zhou(Kaiwu)</div>
+                    <div class="wlw_block_time">14:50-15:20</div>
+                </div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p4">
+        <div class="head">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="title">Enabling Ecosystem</div>
+            <div class="time">（15:30~17:00）</div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[12]}</div>
+                    <img src="__IMG__/qihai913.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit">IoT for every device maker(Ayla)(Video)  Philip Chang</div>
+                        <div class="cyl_block_name">Philip Chang Alya Founder</div>
+                        <div class="cyl_block_time">15:40-16:00</div>
+                    </div>
+                </div>
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[13]}</div>
+                    <img src="__IMG__/qihai914.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit">Keynote4: Leading the game of supply chain by adopting IoT(Video)</div>
+                        <div class="cyl_block_name">Zhenhui Wang JD</div>
+                        <div class="cyl_block_time">16:00-16:20</div>
+                    </div>
+                </div>
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[14]}</div>
+                    <img src="__IMG__/qihai915.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit"> Panel 3: Hardball Competition & Hardware Maker Ecosystem Moderated by Allen Wu(ARM China CEO)</div>
+                        <div class="cyl_block_name">Jeffrey Kang etc.</div><!-- , Qingyun Wu(Mindry), Frank Liang(Broadcom),  JianGong Zhou(Forbes), Zhenhui Wang(JD), Haiyin Shen(360) -->
+                        <div class="cyl_block_time">16:20-16:50</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+        <ul class="dotList">
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse active_reverse"></li>
+        </ul>
+    </div>
+    
+    <div class="modal fade" id="mask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                      &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                   DETAIL:
+                </h4>
+             </div>
+             <div class="modal-body">
+                <table>
+                    <thead>
+                    <tr>
+                        <th width="185">Session</th>
+                        <th width="96">Time</th>
+                        <th width="310">Topic</th>
+                        <th width="274">Speakers</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td rowspan="3" width="185">Session 1<br />
+                        Future Internet<br />
+                        9:00-10:30</td>
+                        <td>9:10-9:30</td>
+                        <td><strong>Opening Remarks(Video)</strong></td>
+                        <td width="274">Jeff Xiong, Jeffrey Kang<br />
+                        Co-Chair of the Summit</td>
+                    </tr>
+                    <tr>
+                        <td>9:30-10:00</td>
+                        <td><strong>Keynote1: Internet of Things and Humans(Video)</strong></td>
+                        <td width="274">Mike Muller<br />
+                        (ARM Founder&amp;CTO)</td>
+                    </tr>
+                    <tr>
+                        <td>10::00-10:30</td>
+                        <td><strong>Keynote2: Internet of New Energy(Video)</strong></td>
+                        <td width="274">Lei Zhang<br />
+                        Envision CEO</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4" width="185">Session 2<br />
+                        Industry 4.0<br />
+                        10:45-12:30</td>
+                        <td>10:55-11:15</td>
+                        <td><strong>Keynote 3: The Future of Possible(Video)</strong></td>
+                        <td width="274">Frank Wang<br />
+                        DJI</td>
+                    </tr>
+                    <tr>
+                        <td>11:15-11:35</td>
+                        <td><strong>Revolutionizing Material Handling(Grabit)(Video)</strong></td>
+                        <td width="274">Harsha Prahlad<br />
+                        Co-Found &amp;CTO</td>
+                    </tr>
+                    <tr>
+                        <td>11:35-11:50</td>
+                        <td><strong>Robots: The Genie of Industry 4.0(Video)</strong></td>
+                        <td width="274">Sai Zhang(Jinan YiFei)</td>
+                    </tr>
+                    <tr>
+                        <td>11:50-12:20</td>
+                        <td><strong>Panel 1: Industry 4.0 Moderated by Ivy Li(7 Seas Partner)(Video)</strong></td>
+                        <td width="274">Caisong Z(BYD), Harsha(Grabit), Frank Wang(DJI),Jacky Zhou(TCL)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" width="185">Session 3<br />
+                        IoT and future life<br />
+                        13:30-15:20</td>
+                        <td>13:40-13:55</td>
+                        <td><strong>Human Body: The next connected device (ProfUSA)(Video)</strong></td>
+                        <td width="274">Ben Hwang<br />
+                        Founder&amp;CEO</td>
+                    </tr>
+                    <tr>
+                        <td>13:55-14:10</td>
+                        <td><strong>Seeing is unbelievable(AVEGANT)(Video)</strong></td>
+                        <td width="274">Edward Tang</td>
+                        </tr>
+                        <tr>
+                        <td>14:10-14:25</td>
+                        <td><strong>Create the Future of Transportation, Today(LitMotors)(Video)</strong></td>
+                        <td width="274">Danny Kim<br />
+                        Founder &amp; CEO</td>
+                    </tr>
+                    <tr>
+                        <td>14:25-14:50</td>
+                        <td><strong>Smart Wristband(Elemoon)(Video)</strong></td>
+                        <td width="274">Jing Zhou</td>
+                    </tr>
+                    <tr>
+                        <td>14:50-15:20</td>
+                        <td><strong>Panel 2: IoT meets Internet Moderated by Jeff Xiong(Video)</strong></td>
+                        <td width="274">Jack Xu(Sina President), Mel Yin(Tencent), Jeff Liu(Huawei), JP(Qingming), Shuhua Zhou(Kaiwu)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" width="185">Session 4<br />
+                        Enabling Ecosystem<br />
+                        15:20-17:10</td>
+                        <td>15:40-16:00</td>
+                        <td><strong>IoT for every device maker(Ayla)(Video)</strong></td>
+                        <td width="274">Philip Chang<br />
+                        Alya Founder</td>
+                    </tr>
+                    <tr>
+                        <td>16:00-16:20</td>
+                        <td><strong>Keynote4: Leading the game of supply chain by adopting IoT(Video)</strong></td>
+                        <td width="274">Zhenhui Wang<br />
+                        JD</td>
+                    </tr>
+                    <tr>
+                        <td>16:20-16:50</td>
+                        <td><strong>Panel 3: Hardball Competition &amp; Hardware Maker Ecosystem Moderated by Allen Wu(ARM China CEO)(Video)</strong></td>
+                        <td width="274">Jeffrey Kang, Qingyun Wu(Mindry), Frank Liang(Broadcom)，JianGong Zhou(Forbes), Zhenhui Wang(JD), Haiyin Shen(360)</td>
+                    </tr>
+                    </tbody>
+                </table>
+             </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+             </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div id="huise">
+        <div class="videobox">
+            <div id="videoembed">
+                
+            </div>
+        </div>
+        <div class="btn_close">
+            <a href="javascript:void();" id="close-btn"></a>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__JS__/PageScroll.js"></script>
+
+</block>

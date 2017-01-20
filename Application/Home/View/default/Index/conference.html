@@ -1,0 +1,295 @@
+<extend name="Layout/default" />
+<block name="title">{:L('SUMMIT')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/conference.css">
+    <style type="text/css">
+        @media screen and (max-height:768px){
+            html{
+                font-size: 12px;
+            }
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="home index">
+        <div class="container">
+            <div class="row row_back">
+                <a href="index.html?index_slider=5" class="btn btn-default back_btn">
+                    {:L('BACK')}
+                    <div class="bg_hover"></div>
+                </a>
+            </div>
+            <h2>峰&nbsp;&nbsp;会</h2>
+            <p>2014 IDEAS 互联网和物联网跨界{:L('SUMMIT')}</p>
+            <div class="row row_detail">
+                <div class="btn bt-default detail" data-toggle="modal" data-target="#mask">查看详情</div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p1">
+        <ul class="row nav">
+            <li class="col-md-2 col-md-offset-2 on">互联网的未来</li>
+            <li class="col-md-2">工业4.0</li>
+            <li class="col-md-2">物联网生活</li>
+            <li class="col-md-2">物联网产业生态链</li>
+        </ul>
+        <div class="title">互联网的未来</div>
+        <div class="time">(9:00~10:30)</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[0]}</div>
+                    <img src="__IMG__/qihai92.png">
+                    <div class="ct_block_tit">主办方致辞（视频）</div>
+                    <div class="ct_block_time">9:10~9:30</div>
+                </div>
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[1]}</div>
+                    <img src="__IMG__/qihai93.png">
+                    <div class="ct_block_tit">主题演讲：物联网与人联网（视频）</div>
+                    <div class="ct_block_time">9:30~10:00</div>
+                </div>
+                <div class="col-md-4 ct_block">
+                    <div style="display:none">{$data[2]}</div>
+                    <img src="__IMG__/qihai94.png">
+                    <div class="ct_block_tit">主题演讲：物联网与新能源（视频）</div>
+                    <div class="ct_block_time">10:00~10:30</div>
+                </div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p2">
+        <div class="title">工业4.0</div>
+        <div class="time">(10:10~12:30)</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[3]}</div>
+                    <img src="__IMG__/qihai95.png">
+                    <div class="gy_block_time">10:55-10:15</div>
+                    <div class="gy_block_tit">主题演讲：未来无所不能（视频）</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[4]}</div>
+                    <img src="__IMG__/qihai96.png">
+                    <div class="gy_block_time">11:15-11:35</div>
+                    <div class="gy_block_tit">智能机械手：再轻再薄再快也不怕(Grabit)(视频)</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[5]}</div>
+                    <img src="__IMG__/qihai97.png">
+                    <div class="gy_block_time">11:35-11:50</div>
+                    <div class="gy_block_tit">机器人：工业4.0的精灵(济南翼菲）(视频)</div>
+                </div>
+                <div class="col-md-3 gy_block">
+                    <div style="display:none">{$data[6]}</div>
+                    <img src="__IMG__/qihai98.png">
+                    <div class="gy_block_time">11:50-12:20</div>
+                    <div class="gy_block_tit">讨论 1: 工业 4.0 主持人 Ivy Li({:L('HEAD_TITLE')}合伙人)(视频)</div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow_down"></div>
+        <ul class="dotList">
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse active_reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+        </ul>
+    </div>
+    <div class="home_child index p3">
+        <div class="title">物联网生活</div>
+        <div class="time">（13:30~15:20）</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[7]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai99.png">
+                        <div class="txt_bg">人体: 下一代联网设备 (ProfUSA)(视频)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">演讲嘉宾</div>
+                    <div class="wlw_block_name" title="Ben Hwang 创始人兼CEO">Ben Hwang 创始人兼CEO</div>
+                    <div class="wlw_block_time">13:40-13:55</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[8]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai910.png">
+                        <div class="txt_bg">视觉效果革命(AVEGANT)(视频)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">演讲嘉宾</div>
+                    <div class="wlw_block_name" title="Edward Tang">Edward Tang</div>
+                    <div class="wlw_block_time">13:55-14:10</div>
+                </div>
+                <div class="col-md-4 wlw_block">
+                    <div style="display:none">{$data[9]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai911.png">
+                        <div class="txt_bg">未来的交通工具（LitMotors）(视频)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">演讲嘉宾</div>
+                    <div class="wlw_block_name" title="Danny Kim 创始人 & CEO">Danny Kim 创始人 & CEO</div>
+                    <div class="wlw_block_time">14:10-14:25</div>
+                </div>
+                <div class="col-md-4 wlw_block pt">
+                    <div style="display:none">{$data[10]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai912.png">
+                        <div class="txt_bg">智能手环(Elemoon）(视频)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">演讲嘉宾</div>
+                    <div class="wlw_block_name" title="周静">周静</div>
+                    <div class="wlw_block_time">14:25-14:50</div>
+                </div>
+                <div class="col-md-4 wlw_block pt">
+                    <div style="display:none">{$data[11]}</div>
+                    <div class="img_wrap">
+                        <img src="__IMG__/qihai912.png">
+                        <div class="txt_bg">讨论 2: 物联网与互联网 主持人 熊明华(视频)</div>
+                    </div>
+                    <div class="wlw_block_yjjb">演讲嘉宾</div>
+                    <div class="wlw_block_name" title="许良杰(新浪总裁)，殷宇(腾讯)，刘江峰(华为), JP（启明）,周树华（开物）">许良杰(新浪总裁)，殷宇(腾讯)，刘江峰(华为), JP（启明）,周树华（开物）</div>
+                    <div class="wlw_block_time">14:50-15:20</div>
+                </div>
+            </div>
+        </div>
+        <ul class="dotList">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="home_child index p4">
+        <div class="head">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="title">物联网产业生态链</div>
+            <div class="time">（15:30~17:00）</div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[12]}</div>
+                    <img src="__IMG__/qihai913.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit">人人都可以做物联网(Ayla)(视频)</div>
+                        <div class="cyl_block_name">Philip Chang Alya 创始人</div>
+                        <div class="cyl_block_time">15:40-16:00</div>
+                    </div>
+                </div>
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[13]}</div>
+                    <img src="__IMG__/qihai914.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit">主题演讲：以物联网抢跑供应链(视频)</div>
+                        <div class="cyl_block_name">王振辉 京东</div>
+                        <div class="cyl_block_time">16:00-16:20</div>
+                    </div>
+                </div>
+                <div class="col-md-4 cyl_block">
+                    <div style="display:none">{$data[14]}</div>
+                    <img src="__IMG__/qihai915.png">
+                    <div class="tempwrap">
+                        <div class="cyl_block_tit">讨论3：硬蛋大赛及硬件产业生态链 主持人 吴爱爱（ARM中国总经理）</div>
+                        <div class="cyl_block_name">康敬伟，吴庆赟（迈瑞），梁宜(broadcomm)，周健工（福布斯），王振辉（京东），沈海寅（360）</div>
+                        <div class="cyl_block_time">16:20-16:50</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+        <ul class="dotList">
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse"></li>
+            <li class="reverse active_reverse"></li>
+        </ul>
+    </div>
+    
+    <div class="modal fade" id="mask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                      &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                   详情：
+                </h4>
+             </div>
+             <div class="modal-body">
+                session 1<br>   
+                互联网的未来<br>
+                9:00-10:30&nbsp;&nbsp;9:10-9:30&nbsp;&nbsp;&nbsp;主办方致辞(视频)&nbsp;&nbsp;&nbsp;熊明华 , 康均为<br>
+                {:L('SUMMIT')}联席主席 <br>
+                9:30-10:00&nbsp;&nbsp;主题演讲：物联网与人联网(视频)&nbsp;&nbsp;&nbsp;Mike Muller <br>
+                (ARM 创始人兼CTO) <br>
+                10:00-10:30&nbsp;&nbsp;主题演讲：物联网与新能源(视频)&nbsp;&nbsp;&nbsp;张雷 <br>
+                远景能源CEO <br>
+                session 2<br>
+                工业4.0 <br>
+                10:45-12:30&nbsp;&nbsp;10:55-11:15&nbsp;&nbsp;主题演讲：未来无所不能(视频)&nbsp;&nbsp;&nbsp;汪滔 <br>
+                大疆科技 <br>
+                11:15-11:35&nbsp;&nbsp;智能机械手：再轻再薄再快也不怕(Grabit)(视频)&nbsp;&nbsp;harsha plahld <br>
+                Grabit 联合创始人兼 CTO <br>
+                session 1<br>   
+                互联网的未来<br>
+                9:00-10:30&nbsp;&nbsp;9:10-9:30&nbsp;&nbsp;&nbsp;主办方致辞(视频)&nbsp;&nbsp;&nbsp;熊明华 , 康均为<br>
+                {:L('SUMMIT')}联席主席 <br>
+                9:30-10:00&nbsp;&nbsp;主题演讲：物联网与人联网(视频)&nbsp;&nbsp;&nbsp;Mike Muller <br>
+                (ARM 创始人兼CTO) <br>
+                10:00-10:30&nbsp;&nbsp;主题演讲：物联网与新能源(视频)&nbsp;&nbsp;&nbsp;张雷 <br>
+                远景能源CEO <br>
+                session 2<br>
+                工业4.0 <br>
+                10:45-12:30&nbsp;&nbsp;10:55-11:15&nbsp;&nbsp;主题演讲：未来无所不能(视频)&nbsp;&nbsp;&nbsp;汪滔 <br>
+                大疆科技 <br>
+                11:15-11:35&nbsp;&nbsp;智能机械手：再轻再薄再快也不怕(Grabit)(视频)&nbsp;&nbsp;harsha plahld <br>
+                Grabit 联合创始人兼 CTO
+             </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+             </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div id="huise">
+        <div class="videobox">
+            <div id="videoembed">
+                <embed id="video" src="" allowfullscreen="true" quality="high" width="480" height="400" align="middle"  allowscriptaccess="always" type="application/x-shockwave-flash">
+            </div>
+        </div>
+        <div class="btn_close">
+            <a href="javascript:void();" id="close-btn"></a>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__JS__/PageScroll.js"></script>
+
+</block>

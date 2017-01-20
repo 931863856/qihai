@@ -1,0 +1,200 @@
+<extend name="Layout/default" />
+<block name="title">{:L('TEAM')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+        *{
+            letter-spacing: 2px;
+        }
+        html,body{
+            height: 100%;
+        }
+        .main_team{
+            min-height: 96.5%;
+        }
+        @media (min-width: 75em){
+            .container {
+                max-width: 63.25rem;
+            }
+        }
+        @media (max-height: 768px){
+            html{
+                font-size: 10px;
+            }
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="main_team">
+        <div class="container ctrl">
+            <div class="head">
+                <h2>
+                    {:L('TEAM')}
+                    <a href="index.html?index_slider=3" class="back_btn">
+                        {:L('BACK')}
+                        <div class="bg_hover"></div>
+                    </a>
+                </h2>
+            </div>
+            <div class="content">
+                <div>
+                    {$brief['description']}
+                </div>
+                <div class="row box">
+                    <foreach name="data" item="vo">
+                    <div class="col-md-4 plr">
+                        <div class="wrap">
+                            <img src="{$vo.image}">
+                            <div class="img_mask" onclick="popupDetail({$vo.information_id})">
+                                <div class="hidden">{$vo.title}</div>
+                                <div class="img_mask_name"></div>
+                                <div class="img_mask_job"></div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    </foreach>
+                    <!--<div class="col-md-4 pr">
+                        <div class="wrap">
+                            <img src="__IMG__/01.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 plr">
+                        <div class="wrap">
+                            <img src="__IMG__/02.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl">
+                        <div class="wrap">
+                            <img src="__IMG__/03.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pr">
+                        <div class="wrap">
+                            <img src="__IMG__/04.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 plr">
+                        <div class="wrap">
+                            <img src="__IMG__/05.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl">
+                        <div class="wrap">
+                            <img src="__IMG__/06.png">
+                            <div class="img_mask">
+                                <div class="img_mask_name">熊明华</div>
+                                <div class="img_mask_job">创始人，管理合伙人</div>
+                                <img src="__IMG__/sousuo.png">
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <foreach name="data" item="vo">
+        <div class="alert_detail">
+            <div class="container" id="detail_{$vo.information_id}">
+                <div class="tempwrap">
+                    <div class="top">
+                        <label></label>
+                        <span></span>
+                    </div>
+                    <img src="{$vo.image}">
+                    <!--<div class="name">{$vo.title}</div>
+                    <div class="job">创始人，管理合伙人</div>
+                    <p>
+                       根据德国交通部2月份的统计数据，由于桥梁和列车问题，在德国铁路网络的近70个路段，列车的实际运行速度比计划的要慢。此外，还有施工问题。根据德国交通部2月份的统计数据，由于桥梁和列车问题，在德国铁路网络的近70个路段
+                    </p>-->
+                    <div class="content">
+                        {$vo.description}
+                    </div>
+                    <div class="bottom">
+                        <div class="email">&nbsp;</div>
+                        <a href="javascript:void(0)">{:L('CLOSE')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </foreach>
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var arr = [];
+
+        function popupDetail(id){
+            $('.main_team .container.ctrl').hide();
+            $('#detail_' + id).fadeIn(150);
+
+            var src = $(this).siblings('img').attr('src');
+            $('.tempwrap img').attr('src', src);
+            var name_And_job = arr[id-9];
+            $('#detail_' + id +' .top').children('label').text(name_And_job.split(' - ')[0]);
+            $('#detail_' + id +' .top').children('span').text(name_And_job.split(' - ')[1]);
+            var str_email = $('#detail_' + id + ' .content').find('p').last().text();
+            $('#detail_' + id + ' .content').find('p').last().html('');
+            $('#detail_' + id +' .bottom .email').append(str_email);
+        }
+        $(function() {
+            $('.col-md-4 .wrap').hover(function(){
+                $(this).children('.img_mask').slideDown(200);
+            },function(){
+                $(this).children('.img_mask').stop().slideUp(200);
+            })
+
+            /*$('.wrap .img_mask').click(function(){
+                $('.main_team .container.ctrl').hide();
+                $('.main_team .alert_detail .container').fadeIn(150);
+
+                var src = $(this).siblings('img').attr('src');
+                $('.tempwrap img').attr('src',src);
+            })*/
+            $('.bottom a').click(function(){
+                $('.main_team .alert_detail .container').hide();
+                $('.main_team .container.ctrl').fadeIn(150);
+            })
+
+            $('.main_team .img_mask .hidden').each(function(i,o){
+                arr[i] = $(o).text();
+                var name_And_job = $(o).text();
+                $('.main_team .box .wrap').eq(i).find('.img_mask_name').text(name_And_job.split(' - ')[0]);
+                $('.main_team .box .wrap').eq(i).find('.img_mask_job').text(name_And_job.split(' - ')[1]);
+            })
+           
+
+        })
+    </script>
+</block>
+
+<block name="footer">
+    <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+</block>

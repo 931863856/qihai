@@ -1,0 +1,83 @@
+<extend name="Layout/default" />
+<block name="title">{:L('ABOUT_US')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+        .foot{
+            background: #266DA8;
+            color:#999;
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="main_aboutus">
+        <div class="head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-9 ">
+                        <a href="index.html?index_slider=2" class="back_btn">
+                            {:L('BACK')}
+                            <div class="bg_hover"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    {$data['description']}
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>{:L('WHY_WE_DO')}?</h1>
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-md-4 pr">
+                        <img src="__IMG__/guanyu1.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>
+                    <div class="col-md-4 block">
+                        <img src="__IMG__/guanyu2.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>
+                    <div class="col-md-4 pl">
+                        <img src="__IMG__/guanyu3.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>
+                    <div class="col-md-4 pr">
+                        <img src="__IMG__/guanyu4.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>
+                    <div class="col-md-4 block">
+                        <img src="__IMG__/guanyu5.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>
+                    <div class="col-md-4 pl">
+                        <img src="__IMG__/guanyu6.png">
+                        <p>
+                            科技创新是美国经济增长最强的发动机，中国是美国技术产品最大的市场。
+                        </p>
+                    </div>-->
+                    {$data_detail['description']}
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+</block>

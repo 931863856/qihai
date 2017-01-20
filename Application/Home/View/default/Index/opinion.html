@@ -1,0 +1,232 @@
+<extend name="Layout/default" />
+<block name="title">{:L('OPINION_TITLE')}</block>
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/qihai.css">
+    <style type="text/css">
+         @media screen and (max-width: 1440px){
+             html{
+                font-size: 12px;
+            }
+            .contain_value .content .content_list {
+                min-width: 68.75rem;
+                height: 22rem;
+                margin-top: 5.25rem;
+            }
+            .contain_value .content .content_list .content_list_item .img_div{
+                height: 70%;
+            }
+            .contain_value .content .nav .nav_wrap .item {
+                width: 6rem;
+            }
+
+         }
+        @media screen and (min-width: 1440px) and (max-width: 1600px){
+            html{
+                font-size: 14px;
+            }
+            .contain_value .content .content_list {
+                min-width: 68.75rem;
+                margin-top: 5.25rem;
+            }
+            .contain_value .content .nav .nav_wrap .item {
+                width: 6rem;
+            }
+        }
+        body{
+            overflow-y:hidden;
+        }
+        .content .foot{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</block>
+<block name="content">
+    <div class="contain_value">
+        <div class="banner">
+            <div class="banner_wrap">
+                <div class="title">{:L('HEAD_TITLE')}</div>
+                <div class="instruction">{:L('SLOGAN')}</div>
+                <a class="down_btn">
+                    <span class="down_btn_layer"></span> 
+                </a>
+            </div>
+            <a class="go_back" href="index.html?index_slider=1">
+                <img src="__IMG__/shouye3.png">
+                {:L('BACK')}
+            </a>
+        </div>
+        <div class="content">
+            <div class="nav">
+                <div class="nav_wrap">
+                    <div class="item">
+                        <img src="__IMG__/shouye12.png">
+                        <div class="tit">{:L('VALUE_PROPOSITION')}</div>
+                    </div>
+                    <div class="item">
+                        <img src="__IMG__/shouye11.png">
+                        <div class="tit">{:L('INVESTMENT_THESIS')}</div>
+                    </div>
+                    <div class="item">
+                        <img src="__IMG__/shouye13.png">
+                        <div class="tit">{:L('POSITIONING')}</div>
+                    </div>
+                    <div class="item">
+                        <img src="__IMG__/shouye14.png">
+                        <div class="tit">{:L('STRATEGY')}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                {:L('SLOGAN')}
+            </div>
+            <div class="content_list">
+                <div class="content_list_item" onclick="location.href='{:U('opinion_detail', array('idx'=>'0'))}'">
+                    <a>{:L('VALUE_PROPOSITION')}</a>
+                    <div class="img_div">
+                        <img src="__IMG__/person1.png">
+                    </div>
+                    {$opinion_0['description']}
+                </div>
+                <div class="content_list_item" onclick="location.href='{:U('opinion_detail', array('idx'=>'1'))}'">
+                    <a>{:L('INVESTMENT_THESIS')}</a>
+                    <div class="img_div">
+                        <img src="__IMG__/person2.png">
+                    </div>
+                    {$opinion_1['description']}
+                </div>
+                <div class="content_list_item" onclick="location.href='{:U('opinion_detail', array('idx'=>'2'))}'">
+                    <a>{:L('POSITIONING')}</a>
+                    <div class="img_div">
+                        <img src="__IMG__/person3.png">
+                    </div>
+                    {$opinion_2['description']}
+                </div>
+                <div class="content_list_item" onclick="location.href='{:U('opinion_detail', array('idx'=>'3'))}'">
+                    <a>{:L('STRATEGY')}</a>
+                    <div class="img_div">
+                        <img src="__IMG__/person4.png">
+                    </div>
+                    {$opinion_3['description']}
+                </div>
+            </div>
+            <div class="foot">@Copyright 2016 {:L('HEAD_TITLE')}</div>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript">
+    $(function(){
+        var ie_browser = window.navigator.userAgent.indexOf('MSIE') ;
+        var browser = window.navigator.userAgent.toLowerCase().indexOf('firefox');
+        // 滚轮监听并触发滑动方法
+        var is_finished = true;
+        var scrollFunc = function(e){
+            //阻止滚轮默认事件，使在触发滚轮时不跳产生页面抽搐一下的
+            e.preventDefault();
+            if (is_finished){
+                e = e || window.event;
+                //all browser but Firefox
+                if(e.wheelDelta<0 || e.detail>0){
+                    scroll_btm();
+                }else if(e.wheelDelta>0 || e.detail<0){
+                    scroll_top();
+                }
+            }   
+        }
+
+        // 注册滚轮事件
+        function regist_mousewheel(){
+            //非IE 
+            if(document.addEventListener && !document.attachEvent) { 
+                if (browser != -1) {
+                    //FF绑定滚动事件 
+                    document.addEventListener('DOMMouseScroll', scrollFunc);
+                } else {
+                    //其他浏览器
+                   document.addEventListener('mousewheel',scrollFunc); 
+                }
+            } 
+            //IE
+            else if(document.attachEvent && !document.addEventListener){ 
+                document.attachEvent('onmousewheel',scrollFunc); 
+            }else{ 
+                window.onmousewheel = scrollFunc; 
+            }
+        }
+        regist_mousewheel();
+
+        // 向下滑方法
+        var scroll_btm=function(){
+            is_finished = false;
+            if(browser != -1 || ie_browser != -1){
+                $('body,html').animate({
+                    scrollTop:$('.content').offset().top
+                }, 1000);
+            }else{
+                $(document.body).animate({
+                    scrollTop:$('.content').offset().top
+                }, 1000);
+            }
+            
+            setTimeout(function(){
+                is_finished = true;
+            },1000)
+        }
+
+        // 向上滑方法
+        var scroll_top=function(){
+            is_finished = false;
+            if(browser != -1 || ie_browser != -1){
+                $('body,html').animate({
+                    scrollTop:0
+                }, 1000);
+            }else{
+                $(document.body).animate({
+                    scrollTop:0
+                }, 1000);
+            }
+           
+            setTimeout(function(){
+                is_finished = true;
+            },1000)
+        }
+
+        // 点击下一页按钮调用向下滑方法
+        $('.down_btn').click(function(){
+            scroll_btm();
+        })
+
+        // 箭头下按钮hover
+        $('.down_btn').hover(function(){
+            $('.down_btn_layer').show();
+            $(this).children().addClass('down_btn_layer_hover');
+        },function(){
+            $('.down_btn_layer').hide();
+            $(this).children().removeClass('down_btn_layer_hover');
+        })
+        
+        // li图片hover
+        $('.content_list_item').hover(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).children('a').slideDown();
+        },function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).children('a').stop().slideUp();
+        })
+        //跳转
+        /*$('.contain_value .content .content_list .content_list_item').click(function(){
+            location.href="page_value_detail.html";
+        })*/
+        //子页返滑到底部
+        var is_scroll_btm = window.location.href.split('?')[1];
+        if (is_scroll_btm) {
+            scroll_btm();
+        }
+    })
+    </script>
+</block>
